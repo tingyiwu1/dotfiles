@@ -47,8 +47,7 @@ map("n", "<leader>sh", require("telescope.builtin").help_tags)
 map("n", "<leader>sm", function()
   require("telescope.builtin").man_pages({
     -- apropos is slow, so use cached version
-    -- ~/.config/scripts/apropos_cached.sh
-    man_cmd = { vim.fn.stdpath("config") .. "/../scripts/apropos_cached.sh" },
+    man_cmd = { vim.fn.stdpath("config") .. "/scripts/apropos_cached.sh" },
   })
 end)
 
