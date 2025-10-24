@@ -1,0 +1,8 @@
+set colored-stats on
+set completion-ignore-case on
+set show-all-if-ambiguous on
+set show-all-if-unmodified on
+set visible-stats on
+
+# Do what "set -o vi" does in Bash to whatever uses readline.
+set editing-mode vi
