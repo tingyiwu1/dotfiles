@@ -5,6 +5,7 @@ local map = vim.keymap.set
 map("n", "<leader>w", "<Cmd>write<CR>")
 map("n", "<leader>q", "<Cmd>:quit<CR>")
 map("n", "<leader>Q", "<Cmd>:wqa<CR>")
+map("n", "<leader>x", "<Cmd>!chmod +x %<CR>", { silent = true })
 
 map("n", "<C-d>", "<C-d>zz")
 map("n", "<C-u>", "<C-u>zz")
