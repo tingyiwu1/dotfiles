@@ -61,8 +61,8 @@ return {
             -- mapping query_strings to modes.
             selection_modes = {
               ["@parameter.outer"] = "v", -- charwise
-              ["@function.outer"] = "V",  -- linewise
-              ["@class.outer"] = "V",     -- blockwise
+              ["@function.outer"] = "V", -- linewise
+              ["@class.outer"] = "V", -- blockwise
             },
           },
           move = {

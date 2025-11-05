@@ -27,6 +27,13 @@ return {
               },
             },
           },
+          man_pages = {
+            mappings = {
+              i = {
+                ["<CR>"] = "select_vertical",
+              },
+            },
+          },
         },
       })
       require("telescope").load_extension("ui-select")
