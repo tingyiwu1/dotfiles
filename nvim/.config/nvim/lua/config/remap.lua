@@ -25,14 +25,13 @@ map("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
 map("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
 
 -- Paste and preserve
-map("x", "<leader>p", [["_dP]])
+-- map("x", "<leader>p", [["_dP]])
 
 -- Yank to system clipboard
 map({ "n", "v" }, "<leader>y", [["+y]])
 map("n", "<leader>Y", [["+Y]])
 
 -- Delete without yank
-map({ "n", "v" }, "<leader>d", '"_d')
 map({ "n", "v" }, "<leader>d", '"_d')
 
 -- Telescope
@@ -43,6 +42,7 @@ map("n", "<leader>sc", function()
     cwd = vim.fn.stdpath("config"),
   })
 end)
+map("n", "<leader>sk", require("telescope.builtin").keymaps)
 map("n", "<leader>sr", require("telescope.builtin").lsp_references)
 map("n", "<leader>sh", require("telescope.builtin").help_tags)
 map("n", "<leader>sm", function()
@@ -51,16 +51,15 @@ map("n", "<leader>sm", function()
     man_cmd = { vim.fn.stdpath("config") .. "/scripts/apropos_cached.sh" },
   })
 end)
+map("n", "<leader>sb", function()
+  require("telescope.builtin").buffers({
+    sort_mru = true,
+  })
+end)
 
 -- LSP
 map("n", "<leader>lr", ":LspRestart<CR>", { desc = "[L]SP [R]estart" })
 map("n", "<leader>li", ":LspInfo<CR>", { desc = "[L]SP [I]nfo" })
--- map("n", "[d", function()
---   vim.diagnostic.jump({ count = 1, float = true })
--- end)
--- map("n", "]d", function()
---   vim.diagnostic.jump({ count = -1, float = true })
--- end)
 
 -- Harpoon
 map("n", "<leader>ha", function()

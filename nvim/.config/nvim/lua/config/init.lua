@@ -8,7 +8,7 @@ vim.api.nvim_create_autocmd({ "BufEnter", "FocusGained", "WinEnter" }, {
   group = "numbertoggle",
   -- command = "set relativenumber",
   callback = function()
-    local exclude_buftypes = { "help", "nofile", "nowrite" }
+    local exclude_buftypes = { "help", "nofile", "nowrite", "terminal" }
     if not vim.tbl_contains(exclude_buftypes, vim.bo.buftype) then
       vim.opt.relativenumber = true
     end
@@ -18,7 +18,7 @@ vim.api.nvim_create_autocmd({ "BufLeave", "FocusLost", "WinLeave" }, {
   group = "numbertoggle",
   -- command = "set norelativenumber",
   callback = function()
-    local exclude_buftypes = { "help", "nofile", "nowrite" }
+    local exclude_buftypes = { "help", "nofile", "nowrite", "terminal" }
     if not vim.tbl_contains(exclude_buftypes, vim.bo.buftype) then
       vim.opt.relativenumber = false
     end
