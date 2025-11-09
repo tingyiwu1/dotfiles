@@ -58,6 +58,10 @@ end)
 map("n", "<leader>lr", ":LspRestart<CR>", { desc = "[L]SP [R]estart" })
 map("n", "<leader>li", ":LspInfo<CR>", { desc = "[L]SP [I]nfo" })
 
+-- Git
+map("n", "<leader>gs", ":vert Git<CR>")
+map("n", "<leader>gd", ":Gvdiffsplit<CR>")
+
 -- Harpoon
 map("n", "<leader>ha", function()
   require("harpoon"):list():add()
