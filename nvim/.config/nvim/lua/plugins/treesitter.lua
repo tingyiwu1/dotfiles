@@ -5,6 +5,14 @@ return {
     lazy = false,
     dependencies = {
       "nvim-treesitter/nvim-treesitter",
+      {
+        "nvim-treesitter/nvim-treesitter-context",
+        config = function()
+          require("treesitter-context").setup({
+            multiwindow = true,
+          })
+        end,
+      },
     },
     config = function()
       require("nvim-treesitter.configs").setup({

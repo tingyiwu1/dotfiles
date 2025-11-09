@@ -32,6 +32,7 @@ return {
       end,
     },
   },
+  lazy = false,
   opts = {
     nes = {
       enabled = true,
