@@ -44,7 +44,13 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 
 vim.diagnostic.config({
   update_in_insert = true,
+  severity_sort = true,
   virtual_text = true,
+  jump = {
+    on_jump = function()
+      vim.diagnostic.open_float()
+    end,
+  },
   float = {
     focusable = false,
     style = "minimal",
