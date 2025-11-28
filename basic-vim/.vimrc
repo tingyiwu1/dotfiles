@@ -39,16 +39,19 @@ inoremap  u
 inoremap  u
 let &cpo=s:cpo_save
 unlet s:cpo_save
+set background=dark
+colorscheme vague
+syntax on
 set confirm
 set expandtab
-set grepformat=%f:%l:%c:%m
-set grepprg=rg\ --vimgrep\ -uu\ 
 set helplang=en
 set nohlsearch
+set incsearch
+set nowrap
 set ignorecase
-set noloadplugins
+set signcolumn=yes
 set scrolloff=8
-set shiftwidth=2
+set shiftwidth=4
 set sidescrolloff=8
 set smartcase
 set smartindent
@@ -57,9 +60,23 @@ set splitright
 set noswapfile
 set tabstop=4
 set termguicolors
-set undofile
 set updatetime=50
 set window=55
 set number
 set relativenumber
+set cursorline
+set fillchars+=vert:\│
+let &t_EI = "\033[2 q" " NORMAL  █
+let &t_SI = "\033[6 q" " INSERT  |
+
+" Let's save undo info!
+if !isdirectory($HOME."/.vim")
+    call mkdir($HOME."/.vim", "", 0770)
+endif
+if !isdirectory($HOME."/.vim/undo-dir")
+    call mkdir($HOME."/.vim/undo-dir", "", 0700)
+endif
+set undodir=~/.vim/undo-dir
+set undofile
+
 " vim: set ft=vim :
