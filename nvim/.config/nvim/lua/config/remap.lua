@@ -12,6 +12,8 @@ map("n", "<C-u>", "<C-u>zz")
 map("n", "n", "nzzzv")
 map("n", "N", "Nzzzv")
 
+map("n", "<C-]>", "<C-]>zt")
+
 -- Toggle relative line numbers
 map("n", "<leader>ln", ":set relativenumber!<CR>")
 
@@ -61,6 +63,7 @@ map("n", "<leader>li", ":LspInfo<CR>", { desc = "[L]SP [I]nfo" })
 -- Git
 map("n", "<leader>gs", ":vert Git<CR>")
 map("n", "<leader>gd", ":Gvdiffsplit<CR>")
+map("n", "<leader>gm", ":Gvdiffsplit!<CR>")
 map("n", "<leader>gb", ":Git blame<CR>")
 
 -- Harpoon

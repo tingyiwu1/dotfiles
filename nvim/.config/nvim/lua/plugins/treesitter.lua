@@ -78,7 +78,7 @@ return {
             enable = true,
             set_jumps = true, -- whether to set jumps in the jumplist
             goto_next_start = {
-              ["]m"] = "@function.outer",
+              -- ["]m"] = "@function.outer",
               ["]]"] = "@class.inner",
             },
             goto_next_end = {
@@ -86,7 +86,7 @@ return {
               ["]["] = "@class.outer",
             },
             goto_previous_start = {
-              ["[m"] = "@function.outer",
+              -- ["[m"] = "@function.outer",
               ["[["] = "@class.inner",
             },
             goto_previous_end = {
@@ -96,6 +96,15 @@ return {
           },
         },
       })
+      local map = vim.keymap.set
+      map("n", "]m", function()
+        require("nvim-treesitter.textobjects.move").goto_next_start("@function.outer")
+        vim.cmd("normal! zt")
+      end)
+      map("n", "[m", function()
+        require("nvim-treesitter.textobjects.move").goto_previous_start("@function.outer")
+        vim.cmd("normal! zt")
+      end)
     end,
   },
 }
