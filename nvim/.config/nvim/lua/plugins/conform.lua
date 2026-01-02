@@ -4,8 +4,8 @@ return {
   config = function()
     require("conform").setup({
       format_on_save = function(bufnr)
-        local buftype = vim.api.nvim_buf_get_option(bufnr, "buftype")
-        if buftype == "nofile" then
+        -- Disable formatting for fugitive buffers
+        if vim.api.nvim_buf_get_name(bufnr):match("fugitive://") then
           return
         end
         return {
