@@ -18,7 +18,7 @@ return {
       require("nvim-treesitter.configs").setup({
         modules = {},
         -- a list of parser names, or "all" (the listed parsers must always be installed)
-        ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline", "go", "rust" },
+        ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline", "go", "rust", "html" },
 
         ignore_install = { "latex" },
         -- install parsers synchronously (only applied to `ensure_installed`)
@@ -60,6 +60,8 @@ return {
               ["if"] = "@function.inner",
               ["ac"] = "@class.outer",
               ["ic"] = "@class.inner",
+              ["at"] = "@tag.outer",
+              ["it"] = "@tag.inner",
             },
             -- You can choose the select mode (default is charwise 'v')
             --
