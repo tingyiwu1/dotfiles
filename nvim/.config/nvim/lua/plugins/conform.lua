@@ -20,10 +20,17 @@ return {
         go = { "gofmt" },
         javascript = { "prettier" },
         typescript = { "prettier" },
+        javascriptreact = { "prettier" },
+        typescriptreact = { "prettier" },
       },
       formatters = {
         ["clang-format"] = {
           prepend_args = { "-style=file", "-fallback-style=LLVM" },
+        },
+        prettier = {
+          prepend_args = function()
+            return { "--config-precedence", "file-override" }
+          end,
         },
       },
     })
