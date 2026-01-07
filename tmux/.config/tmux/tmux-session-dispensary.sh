@@ -4,6 +4,7 @@ SEARCH_DIRS=(
     "$HOME/Projects"
 )
 STATIC_DIRS=(
+    "$HOME/Projects"
     "$HOME/.dotfiles"
     "$HOME/.config"
 )
