@@ -1,10 +1,14 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter-textobjects",
+    branch = "master",
     build = ":TSUpdate",
     lazy = false,
     dependencies = {
-      "nvim-treesitter/nvim-treesitter",
+      {
+        "nvim-treesitter/nvim-treesitter",
+        branch = "master",
+      },
       {
         "nvim-treesitter/nvim-treesitter-context",
         config = function()
@@ -99,12 +103,23 @@ return {
         },
       })
       local map = vim.keymap.set
+      local fallback_langs = { "tex" }
       map("n", "]m", function()
-        require("nvim-treesitter.textobjects.move").goto_next_start("@function.outer")
+        local filetype = vim.bo.filetype
+        if vim.tbl_contains(fallback_langs, filetype) then
+          vim.cmd("normal! ]m")
+        else
+          require("nvim-treesitter.textobjects.move").goto_next_start("@function.outer")
+        end
         vim.cmd("normal! zt")
       end)
       map("n", "[m", function()
-        require("nvim-treesitter.textobjects.move").goto_previous_start("@function.outer")
+        local filetype = vim.bo.filetype
+        if vim.tbl_contains(fallback_langs, filetype) then
+          vim.cmd("normal! [m")
+        else
+          require("nvim-treesitter.textobjects.move").goto_previous_start("@function.outer")
+        end
         vim.cmd("normal! zt")
       end)
     end,
