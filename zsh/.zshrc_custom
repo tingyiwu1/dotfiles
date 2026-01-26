@@ -6,3 +6,7 @@ zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}
 # partial completion suggestions
 zstyle ':completion:*' list-suffixeszstyle ':completion:*' expand prefix suffix
 
+if [ -n "$TMUX" ]; then
+    alias cdd="cd $(tmux display-message -p '#{session_path}')"
+fi
+
