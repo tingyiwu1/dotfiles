@@ -1,5 +1,6 @@
 return {
   "folke/sidekick.nvim",
+  enabled = not vim.g.pvim,
   dependencies = {
     {
       "zbirenbaum/copilot.lua",
