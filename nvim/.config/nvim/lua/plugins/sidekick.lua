@@ -36,7 +36,7 @@ return {
   lazy = false,
   opts = {
     nes = {
-      enabled = true,
+      enabled = false,
     },
     cli = {
       mux = {
