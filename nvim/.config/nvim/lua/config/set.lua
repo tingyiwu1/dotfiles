@@ -28,6 +28,7 @@ opt.incsearch = true
 
 -- Random
 -- opt.cmdheight = 2
+opt.showmode = false
 opt.signcolumn = "yes"
 
 opt.termguicolors = true

@@ -57,8 +57,8 @@ map("n", "<leader>sb", function()
 end)
 
 -- LSP
-map("n", "<leader>lr", ":LspRestart<CR>", { desc = "[L]SP [R]estart" })
-map("n", "<leader>li", ":LspInfo<CR>", { desc = "[L]SP [I]nfo" })
+map("n", "<leader>lr", ":lsp restart<CR>", { desc = "[L]SP [R]estart" })
+map("n", "<leader>li", ":checkhealth vim.lsp<CR>", { desc = "[L]SP [I]nfo" })
 
 -- Git
 map("n", "<leader>gs", ":vert Git<CR>")
