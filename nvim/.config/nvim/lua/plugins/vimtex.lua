@@ -1,7 +1,7 @@
 return {
   {
     "lervag/vimtex",
-    enabled = not vim.g.pvim,
+    enabled = false or not vim.g.pvim,
     lazy = false, -- we don't want to lazy load VimTeX
     -- tag = "v2.15", -- uncomment to pin to a specific release
     init = function()
@@ -11,6 +11,11 @@ return {
       vim.g.vimtex_view_method = "general"
       vim.g.vimtex_view_general_viewer = "fancy-cat" -- doesn't actually do anything
       vim.g.vimtex_compiler_method = "latexmk"
+      vim.g.vimtex_quickfix_ignore_filters = {
+        "Underfull \\\\hbox",
+        "Overfull \\\\hbox",
+        "LaTeX Font Warning",
+      }
       -- vim.g.latex_view_general_options = "-reuse-instance -forward-search @tex @line @pdf"
       vim.g.vimtex_compiler_latexmk = {
         out_dir = "build",
