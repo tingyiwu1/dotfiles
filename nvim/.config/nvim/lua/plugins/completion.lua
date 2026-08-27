@@ -23,7 +23,7 @@ return {
       -- See :h blink-cmp-config-keymap for defining your own keymap
       keymap = {
         preset = "default",
-        ["<C-k>"] = { "show", "show_documentation", "hide_documentation" },
+        ["<C-s>"] = { "show", "show_documentation", "hide_documentation" },
       },
 
       -- appearance = {

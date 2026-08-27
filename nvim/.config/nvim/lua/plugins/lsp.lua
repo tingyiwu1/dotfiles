@@ -55,6 +55,10 @@ return {
       --     return caps
       --   end)(),
       -- })
+      --
+      vim.lsp.config("clangd", {
+        -- cmd = { "clangd", "-nocudalib" },
+      })
 
       vim.api.nvim_create_autocmd("LspAttach", {
         group = vim.api.nvim_create_augroup("my.lsp", {}),
